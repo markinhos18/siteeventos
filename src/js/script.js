@@ -9,7 +9,7 @@ $(document).ready(() => {
 
 /****************************************************** */
 
-  // CAROUSEL
+  // CAROUSEL BANNER 
   const slickOptions = {
     autoplay: true,
     dots: false,
@@ -25,12 +25,14 @@ $(document).ready(() => {
 
 /****************************************************** */
 
-// CONTADOR DO BANNER 
+// CONTADOR DE EVENTOS E INGRESSOS E EMPRESAS
 
   const counterOptions = {
     delay: 10,
     time: 1000,
   };
+
+  $(".counter__number").counterUp(counterOptions);
 
   setInterval(() => {
     const numbersCollection = document.querySelectorAll(".counter__number");
@@ -39,9 +41,8 @@ $(document).ready(() => {
       const currentNumber = parseInt(number.innerHTML);
       number.innerHTML = currentNumber + 1;
     });
-  }, 1000);
+  }, 2000);
 
-  $(".counter__number").counterUp(counterOptions);
 
 /********************************************************* */
 
@@ -49,6 +50,7 @@ $(document).ready(() => {
 // SMTP JAVA SCRIPT PARA AUTENTICAÇÃO DE ENVIO DO EMAIL
 
   $(".footer__form-button").on("click", () => {
+    
     const email = $("#email").val();
 
     const emailOptions = {
@@ -70,5 +72,8 @@ $(document).ready(() => {
     Email.send(emailOptions).then((message) => {
       alert(message);
     });
+
   });
+
+
 });
